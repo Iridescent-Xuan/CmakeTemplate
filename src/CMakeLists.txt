@@ -11,10 +11,15 @@ target_sources(${target_name}
 target_include_directories(${target_name}
     PUBLIC
     # ${CMAKE_SOURCE_DIR}/include
+    # ${IPOPT_INCLUDE_DIRS}
 )
 target_compile_options(${target_name}
     PUBLIC
     -fPIC # for shared library loading
+)
+target_link_directories(${target_name}
+    PUBLIC
+    # ${IPOPT_LIBRARIES}
 )
 target_link_libraries(${target_name}
     PUBLIC

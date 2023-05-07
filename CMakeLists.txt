@@ -17,10 +17,15 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 
 list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_LIST_DIR}/cmake)
 
+option(USE_IPOPT "Use IPOPT" OFF)
+
 # include(find_CLI11)
 # include(find_spdlog)
 # include(find_eigen3)
 # include(find_libigl)
+if(USE_IPOPT)
+    include(find_ipopt)
+endif()
 
 add_subdirectory(src)
 add_subdirectory(test)
