@@ -1,6 +1,6 @@
 set(SPDLOG_VERSION 1.9.2)
+find_package(spdlog ${SPDLOG_VERSION} QUIET)
 
-# find_package(spdlog ${SPDLOG_VERSION} QUIET)
 if(NOT TARGET spdlog::spdlog)
   message(STATUS "${PROJECT_NAME} fetch spdlog ${SPDLOG_VERSION} from source ")
   include(FetchContent)
