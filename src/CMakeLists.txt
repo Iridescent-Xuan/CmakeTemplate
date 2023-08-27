@@ -1,5 +1,5 @@
 set(target_name "hello_world")
-add_library(${target_name} SHARED) # SHARED for shared library loading; STATIC for static library loading
+add_library(${target_name} STATIC) # SHARED for shared library loading; STATIC for static library loading
 target_compile_features(${target_name}
     PUBLIC
     cxx_std_17
@@ -15,7 +15,7 @@ target_include_directories(${target_name}
 )
 target_compile_options(${target_name}
     PUBLIC
-    -fPIC # for shared library loading
+    # -fPIC # for shared library loading
 )
 target_link_directories(${target_name}
     PUBLIC
